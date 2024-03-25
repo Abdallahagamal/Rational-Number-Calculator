@@ -1,0 +1,105 @@
+///////////////////////////ALGORITHM AS PSEUDOCODE./////////////////////////////
+
+FUNCTION gcd(a, b):
+    // Function to find the greatest common divisor using Euclid's algorithm
+    IF b equals 0 THEN
+        RETURN a
+    ELSE
+        RETURN gcd(b, a modulo b)
+
+FUNCTION simplifyFraction(numerator, denominator):
+    // Function to simplify a fraction
+    divisor = gcd(numerator, denominator)
+    numerator = numerator divided by divisor
+    denominator = denominator divided by divisor
+
+FUNCTION addFractions(numerator_1, Denominator_1, numerator_2, Denominator_2, resultNumerator, resultDenominator):
+    // Function to add two fractions
+    commonDenominator = Denominator_1 multiplied by Denominator_2
+    newNumerator1 = numerator_1 multiplied by Denominator_2
+    newNumerator2 = numerator_2 multiplied by Denominator_1
+    resultNumerator = newNumerator1 plus newNumerator2
+    resultDenominator = commonDenominator
+    simplifyFraction(resultNumerator, resultDenominator)
+
+FUNCTION subtractFractions(numerator_1, Denominator_1, numerator_2, Denominator_2, resultNumerator, resultDenominator):
+    // Function to subtract one fraction from another
+    commonDenominator = Denominator_1 multiplied by Denominator_2
+    newNumerator1 = numerator_1 multiplied by Denominator_2
+    newNumerator2 = numerator_2 multiplied by Denominator_1
+    resultNumerator = newNumerator1 minus newNumerator2
+    resultDenominator = commonDenominator
+    simplifyFraction(resultNumerator, resultDenominator)
+
+FUNCTION multiplyFractions(numerator_1, Denominator_1, numerator_2, Denominator_2, resultNumerator, resultDenominator):
+    // Function to multiply two fractions
+    resultNumerator = numerator_1 multiplied by numerator_2
+    resultDenominator = Denominator_1 multiplied by Denominator_2
+    simplifyFraction(resultNumerator, resultDenominator)
+
+FUNCTION divideFractions(numerator_1, Denominator_1, numerator_2, Denominator_2, resultNumerator, resultDenominator):
+    // Function to divide one fraction by another
+    IF numerator_2 equals 0 THEN
+        OUTPUT "Error: Division by zero"
+    ELSE
+        m1 = Denominator_2
+        m2 = numerator_2
+        resultNumerator = numerator_1 multiplied by m1
+        resultDenominator = Denominator_1 multiplied by m2
+        simplifyFraction(resultNumerator, resultDenominator)
+
+FUNCTION main():
+    // Main function to execute the program
+    PRINT "1) Calculate"
+    PRINT "2) Exit"
+    PRINT "Please enter your choice: "
+    WHILE true
+        READ choice
+        IF choice equals "1" THEN
+            PRINT "Please enter a rational number operation OR write exit (to exit)"
+            WHILE true
+            //get the expression from user
+                READ num1
+                IF num1 equals "exit" OR num1 equals "EXIT" THEN
+                    PRINT "Thank you!"
+                    RETURN
+                END IF
+                // the expressions for different types of input expressions
+                patterns = Array of regex patterns for different types of input expressions
+                IF regex_match(num1, patterns) THEN
+                    IF regex_match(num1, pattern1) THEN
+                        // Parsing and processing pattern1 expression
+                        Parse num1 using pattern1
+                        CALL appropriate function based on operator in num1
+                        PRINT result
+                    ELSE IF regex_match(num1, pattern2) THEN
+                        // Parsing and processing pattern2 expression
+                        Parse num1 using pattern2
+                        CALL appropriate function based on operator in num1
+                        PRINT result
+                    ELSE IF regex_match(num1, pattern3) THEN
+                        // Parsing and processing pattern3 expression
+                        Parse num1 using pattern3
+                        CALL appropriate function based on operator in num1
+                        PRINT result
+                    ELSE IF regex_match(num1, pattern4) THEN
+                        // Parsing and processing pattern4 expression
+                        Parse num1 using pattern4
+                        CALL appropriate function based on operator in num1
+                        PRINT result
+                    ELSE
+                        PRINT "Invalid expression. Try again!"
+                    END IF
+                ELSE
+                    PRINT "Invalid expression. Try again!"
+                END IF
+            END WHILE
+        ELSE IF choice equals "2" THEN
+            PRINT "Thank you!"
+            RETURN
+        ELSE
+            PRINT "Enter right choice: "
+        END IF
+    END WHILE
+END FUNCTION
+*/
