@@ -1,5 +1,5 @@
 # Rational-Number-Calculator
-The main expression should be entered like that
+The main expression should be entered like that : 
 <b></b>
 **1/2 + 3/4**
 <b></b>
